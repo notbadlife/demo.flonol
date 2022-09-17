@@ -1,0 +1,144 @@
+<html>
+  <head>
+    <title>VBK - 데모</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="demo.css" />
+    <script src="js/demo.js"></script>
+    <script src="js/utils.js"></script>
+
+    <!--<script src="http://js.flonol.kr/embed-api.js"></script>-->
+    <script src="js/embed-api.js"></script>
+  </head>
+  <body>
+    <h1>DEMO</h1>
+    <hr />
+    <button class="title-tab on" id="tab-editor" onclick="onClickTab()">
+      에디터</button
+    ><button class="title-tab" id="tab-player" onclick="onClickTab()">
+      플레이어
+    </button>
+    <div id="editor-view">
+      <div class="formarea">
+        <div class="call-type-area">
+          <div class="call-type">
+            <input
+              type="radio"
+              name="call-type"
+              value="id-form"
+              id="id-form"
+              checked
+            />
+            <label for="id-form">인터랙티브 비디오 id로 호출 (수정시)</label>
+          </div>
+          <div class="call-type">
+            <input
+              type="radio"
+              name="call-type"
+              value="url-form"
+              id="url-form"
+            />
+            <label for="url-form">url로 호출 (생성시)</label>
+          </div>
+          <div class="call-type">
+            <input
+              type="radio"
+              name="call-type"
+              value="youtube-form"
+              id="youtube-form"
+            />
+            <label for="youtube-form">youtube video id로 호출 (생성시)</label>
+          </div>
+        </div>
+        <ul class="input-params">
+          <li class="id-form url-form youtube-form license-form">
+            <div class="title emphasis">* license key</div>
+            <input
+              type="text"
+              id="editor-params-license-key"
+              placeholder="사이트/기업에 제공된 라이센스키"
+            />
+          </li>
+          <li class="id-form">
+            <div class="title">&nbsp;&nbsp;&nbsp;id</div>
+            <input
+              type="text"
+              id="editor-params-id"
+              placeholder="이미 생성된 인터랙티브 비디오의 아이디"
+            />
+          </li>
+          <li class="url-form hide">
+            <div class="title">&nbsp;&nbsp;&nbsp;url</div>
+            <input
+              type="text"
+              id="editor-params-url"
+              placeholder="인터랙티브 비디오를 제작할 영상의 url"
+            />
+          </li>
+          <li class="youtube-form hide">
+            <div class="title">&nbsp;&nbsp;&nbsp;youtubeVideoId</div>
+            <input
+              type="text"
+              id="editor-params-youtube-id"
+              placeholder="인터랙티브 비디오를 제작할 Youtube의 video id"
+            />
+          </li>
+          <li class="id-form url-form youtube-form ownerid-form">
+            <div class="title">&nbsp;&nbsp;&nbsp;currentOwnerId</div>
+            <input
+              type="text"
+              id="editor-params-owner-id"
+              placeholder="인터랙티브 비디오를 제작하려는 사용자고유값 (각 사이트의 사용자아이디 등)"
+            /><br />
+            <div class="title">&nbsp;</div>
+            <span class="emphasis" style="line-height: 2.5"
+              >* 인터랙티브 비디오를 생성/수정하는 경우만 필요하며, 시청시에는
+              필수값이 아님</span
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="editor-display-buttons">
+        <button onclick="showEditorWindow()" class="button-popup">
+          에디터 팝업으로 보기
+        </button>
+        <button onclick="showEditorIframe()" class="button-iframe">
+          페이지에서 보기 (embed)
+        </button>
+      </div>
+
+      <div class="message-area">
+        <h3>onSave 이벤트 수신 저장 결과 전문</h3>
+        <textarea id="flonol-result-value" readonly></textarea>
+      </div>
+
+      <div id="embeded-editor-area" class="hide">
+        <h3>Embeded 에디터 Test</h3>
+        <div id="flonol-editor" style="width: 1080px; height: 900px"></div>
+      </div>
+    </div>
+
+    <div id="player-view" class="hide">
+      <h3>Embed/Share (iframe)</h3>
+      <iframe
+        src="http://pages.flonol.kr/pages/player?id=0d214f026dfcc073b98dc9703c005ee2"
+        width="640"
+        height="480"
+        allowfullscreen="true"
+        scrolling="no"
+        style="border: none"
+      ></iframe>
+    </div>
+    <!--
+    <p>
+      <ul>
+        <li> 저장과 동시에 닫기 원하는 경우도 표시</li>
+        <li>id, youtubeVideoId, url, license_key 페이지 넘길 수 있도록 구성할 것</li>
+      </ul>
+    </p>
+
+    -->
+    <hr style="margin-top: 50px" />
+  </body>
+  <style></style>
+</html>
