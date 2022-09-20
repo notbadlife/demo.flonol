@@ -108,26 +108,64 @@
       </div>
 
       <div class="message-area">
-        <h3>onSave 이벤트 수신 저장 결과 전문</h3>
-        <textarea id="flonol-result-value" readonly></textarea>
+        <h3>share code</h3>
+        <textarea id="editor-code" readonly style="height: 70px"></textarea>
       </div>
 
       <div id="embeded-editor-area" class="hide">
         <h3>Embeded 에디터 Test</h3>
         <div id="flonol-editor" style="width: 1080px; height: 900px"></div>
       </div>
+
+      <div class="message-area">
+        <h3>onSave 이벤트 수신 저장 결과 전문</h3>
+        <textarea id="flonol-result-value" readonly></textarea>
+      </div>
     </div>
 
     <div id="player-view" class="hide">
-      <h3>Embed/Share (iframe)</h3>
-      <iframe
-        src="http://pages.flonol.kr/pages/player?id=0d214f026dfcc073b98dc9703c005ee2"
-        width="640"
-        height="480"
-        allowfullscreen="true"
-        scrolling="no"
-        style="border: none"
-      ></iframe>
+      <div class="formarea">
+        <ul class="input-params">
+          <li class="id-form url-form youtube-form license-form">
+            <div class="title emphasis">* license key</div>
+            <input
+              type="text"
+              id="player-params-license-key"
+              placeholder="사이트/기업에 제공된 라이센스키"
+            />
+          </li>
+          <li class="id-form">
+            <div class="title">&nbsp;&nbsp;&nbsp;id</div>
+            <input
+              type="text"
+              id="player-params-id"
+              placeholder="이미 생성된 인터랙티브 비디오의 아이디"
+            />
+          </li>
+        </ul>
+      </div>
+      <div class="editor-display-buttons">
+        <button onclick="applyPlayerSetting()" class="button-iframe">
+          설정값 적용하기
+        </button>
+      </div>
+      <div class="message-area">
+        <h3>share code</h3>
+        <textarea
+          id="player-iframe-code"
+          readonly
+          style="height: 70px"
+        ></textarea>
+      </div>
+      <div class="player-wrapper" id="player-wrapper">
+        <iframe
+          width="100%"
+          height="100%"
+          allowfullscreen="true"
+          scrolling="no"
+          style="border: none"
+        ></iframe>
+      </div>
     </div>
     <!--
     <p>

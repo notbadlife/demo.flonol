@@ -49,6 +49,31 @@ function bindingInputToContext() {
   _context.currentOwnerId = getInputElementValue("editor-params-owner-id");
 }
 
+// player
+function applyPlayerSetting() {
+  const wrapper = document.getElementById("player-wrapper");
+  if (!wrapper) {
+    return;
+  }
+
+  const iframe = wrapper.querySelector("iframe");
+  if (!iframe) {
+    return;
+  }
+
+  _context.id = getInputElementValue("player-params-id");
+  _context.licenseKey = getInputElementValue("player-params-license-key");
+
+  const playerUrl = "http://pages.flonol.kr/pages/player";
+  const src = `${playerUrl}?id=${_context.id}&license_key=${_context.licenseKey}`;
+  iframe.src = src;
+
+  const codeViewer = document.getElementById("player-iframe-code");
+  if (codeViewer) {
+    codeViewer.innerText = iframe.outerHTML.toString().replace(/\&amp\;/g, "&");
+  }
+}
+
 // popup sample
 function showEditorWindow() {
   hideEmbededEditorArea();
@@ -181,6 +206,20 @@ function showPlayerTab() {
 
 function hidePlayerTab() {
   hideElementById("player-view");
+
+  const wrapper = document.getElementById("player-wrapper");
+  if (!wrapper) {
+    return;
+  }
+
+  const iframe = wrapper.querySelector("iframe");
+  if (!iframe) {
+    return;
+  }
+
+  iframe.src = "";
+  iframe.innerHTML = "";
+  console.log("hide", iframe);
 }
 
 function setTab(tabId) {
@@ -228,6 +267,9 @@ function initPage() {
   setInputElementValue("editor-params-youtube-id", _context.youtubeVideoId);
   setInputElementValue("editor-params-url", _context.url);
   setInputElementValue("editor-params-owner-id", _context.currentOwnerId);
+
+  setInputElementValue("player-params-license-key", _context.licenseKey);
+  setInputElementValue("player-params-id", _context.id);
 
   initCallTypeRadios();
 }
