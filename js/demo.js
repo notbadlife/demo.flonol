@@ -64,7 +64,7 @@ function applyPlayerSetting() {
   _context.id = getInputElementValue("player-params-id");
   _context.licenseKey = getInputElementValue("player-params-license-key");
 
-  const playerUrl = "http://a2.pages.flonol.kr/pages/player";
+  const playerUrl = "https://a1.pages.flonol.kr/pages/player";
   const src = `${playerUrl}?id=${_context.id}&license_key=${_context.licenseKey}`;
   iframe.src = src;
 
