@@ -109,7 +109,7 @@ class FLNL {
       this.id = options.id;
       url = `${this.editorUrl}?id=${options.id}`;
     } else if (options.youtubeVideoId) {
-      url = `${this.editorUrl}?youtubeVideoId=${options.youtubeVideoId}`;
+      url = `${this.editorUrl}?youtube_video_id=${options.youtubeVideoId}`;
     } else if (options.url) {
       url = `${this.editorUrl}?url=${options.url}`;
     } else {
@@ -117,6 +117,6 @@ class FLNL {
       return "";
     }
 
-    return `${url}&license_key=${options.licenseKey}&currentOwnerId=${options.currentOwnerId}`;
+    return `${url}&license_key=${options.licenseKey}&current_owner_id=${options.currentOwnerId}`;
   }
 }
