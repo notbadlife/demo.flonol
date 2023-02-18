@@ -4,7 +4,7 @@ class FLNL {
 
   get editorUrl() {
     // return "http://d.mdl.flonol.kr/editor.html";
-    return "http://pages.flonol.kr/pages/editor";
+    return "http://a1.pages.flonol.kr/pages/editor";
   }
 
   constructor(options) {
