@@ -15,8 +15,8 @@ function showElementById(elementId) {
 }
 
 const _initValues = {
-  licenseKey: "734704c958ab4cdf91ab9a003cb9ab5d",
-  id: "0d214f026dfcc073b98dc9703c005ee2",
+  licenseKey: "909a9d4d30704b23ba376b35b7a184eb",
+  id: "5deec23ff2911c0acc582ee9c700851b",
   currentOwnerId: "notbadlife.demo",
   youtubeVideoId: "BLxy2jCrd8s",
   url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
