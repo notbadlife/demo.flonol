@@ -1,4 +1,5 @@
 const _hideClassName = "hide";
+const _baseUrl = "https://a1.pages.flonol.kr";
 
 function hideElementById(elementId) {
   const element = document.getElementById(elementId);
@@ -64,8 +65,9 @@ function applyPlayerSetting() {
   _context.id = getInputElementValue("player-params-id");
   _context.licenseKey = getInputElementValue("player-params-license-key");
 
-  const playerUrl = "https://a1.pages.flonol.kr/pages/player";
+  const playerUrl = `${_baseUrl}/pages/player`;
   const src = `${playerUrl}?id=${_context.id}&license_key=${_context.licenseKey}`;
+  
   iframe.src = src;
 
   const codeViewer = document.getElementById("player-iframe-code");
@@ -88,7 +90,7 @@ function showEditorWindow() {
   const isPopup = true;
   const options = getOptionsFromContext(isPopup);
 
-  _context.popupFlnl = new FLNL(options);
+  _context.popupFlnl = new FLNL(_baseUrl, options);
 }
 
 function closeEditorWindow() {
@@ -149,7 +151,7 @@ function showEditorIframe() {
   }
 
   // 생성/호출 Sample
-  _context.iframeFlnl = new FLNL(options);
+  _context.iframeFlnl = new FLNL(_baseUrl, options);
 }
 
 function showEmbededEditorArea() {

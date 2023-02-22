@@ -1,13 +1,13 @@
 class FLNL {
   popup = null;
   id = "";
+  baseUrl = "";
 
   get editorUrl() {
-    // return "http://d.mdl.flonol.kr/editor.html";
-    return "https://a1.pages.flonol.kr/pages/editor";
+    return `${this.baseUrl}/pages/editor`;
   }
 
-  constructor(options) {
+  constructor(baseUrl, options) {
     this.initEditor(options);
   }
 
