@@ -90,6 +90,8 @@ function showEditorWindow() {
   const isPopup = true;
   const options = getOptionsFromContext(isPopup);
 
+  // console.log("options,", options);
+
   _context.popupFlnl = new FLNL(_baseUrl, options);
 }
 
