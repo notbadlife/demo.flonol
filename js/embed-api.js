@@ -4,10 +4,12 @@ class FLNL {
   baseUrl = "";
 
   get editorUrl() {
+    // return "http://d.mdl.flonol.kr/editor.html";
     return `${this.baseUrl}/pages/editor`;
   }
 
   constructor(baseUrl, options) {
+    this.baseUrl = baseUrl;
     this.initEditor(options);
   }
 
